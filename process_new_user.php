@@ -52,7 +52,7 @@
 		$good_image = true;
 		$image_type = pathinfo($_FILES["profile_picture"]["name"], PATHINFO_EXTENSION);
 		$target_file = $image_dir . $image_name . "." . $image_type;
-		$storage_name = "/images" . $image_name . "." . $image_type;
+		$storage_name = "/images" . "/" . $image_name . "." . $image_type;
 		if($image_type != "jpg" && $image_type != "png" && $image_type != "jpeg" && $image_type != "gif" ) {
 			echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
 			$good_image = false;
@@ -85,7 +85,6 @@
 			echo "Registrations Failed";
 			die();
 		}
-
 	?>
 </body>
 </html>

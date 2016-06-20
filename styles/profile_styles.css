@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+body {
+	font-family: 'Raleway', sans-serif;
+	background-color: #CF5C00;
+}
+
+.window {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;	
+}
+.center_obj {
+  position: relative;
+  background: #FFAD6C;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  border-radius: 20px;
+}
