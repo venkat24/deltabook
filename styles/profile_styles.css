@@ -4,11 +4,23 @@ body {
 	font-family: 'Raleway', sans-serif;
 	background-color: #CF5C00;
 }
-
-.window {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;	
+.window form input{
+  position: relative;
+  background: #FFAD6C;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+header {
+  font-family: 'Lobster','cursive';
+  font-size: 50px;
+  text-align: center;
+  color: #321600;
+}
+footer {
+  text-align: center;
+  color: #321600;
 }
 .center_obj {
   position: relative;
@@ -17,5 +29,9 @@ body {
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
-  border-radius: 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
 }

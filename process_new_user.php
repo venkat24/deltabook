@@ -2,8 +2,13 @@
 <html>
 <head>
 	<title>Registration Complete!</title>
+	<?php session_start(); ?>
+	<link rel="stylesheet" type="text/css" href="styles/profile_styles.css">
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
+<div class="window">
+	<div class="center_obj">
 	<?php
 		require("config.php"); //MySQL Config File
 		
@@ -61,7 +66,7 @@
 			echo "<h1>Registration Failed. Please Check Image</h1>";
 		} else {
 			if (move_uploaded_file($_FILES["profile_picture"]["tmp_name"], $target_file)) {
-				echo "Image uploaded successfully!<br>";
+				//echo "Image uploaded successfully!<br>";
 			} else {
 				echo "File upload error.";
 				die();
@@ -77,13 +82,16 @@
     	}    	
 
 		//DATABASE INSERTION
-		$query = "INSERT INTO users (username,password,email,mobile_number,image_path) VALUES('$username','$hash','$email','$mobile_number','$storage_name');";
-		$result = mysqli_query($db,$query);
-		if ($result) {
-			echo "Resigtrations Successful! Welcome to DeltaBook.";
-		} else {
-			echo "Registrations Failed";
-			die();
+		if ($good_image) {
+			$query = "INSERT INTO users (username,password,email,mobile_number,image_path) VALUES('$username','$hash','$email','$mobile_number','$storage_name');";
+			$result = mysqli_query($db,$query);
+			if ($result) {
+				echo "Resigtrations Successful! <br>Welcome to DeltaBook.<br>";
+				echo "<a href='index.php'>login</a>";
+			} else {
+				echo "Registrations Failed";
+				die();
+			}
 		}
 	?>
 </body>

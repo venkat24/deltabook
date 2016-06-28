@@ -22,9 +22,10 @@ header {
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
-  border-radius: 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
 }
-.form input {
+.field {
   font-family: "Raleway", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -33,19 +34,19 @@ header {
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
-  border-radius: 10px;
   font-size: 14px;
 }
-.submit_button {
-  font-family: "Raleway", sans-serif;
+.button {
+  font-family: "Lobster", 'cursive';
   outline: 0;
-  background: #fedcba;
+  background: #FF7400;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .new_user {
 	color: #7B4113;
