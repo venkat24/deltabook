@@ -20,7 +20,7 @@
 		<input class="field" type="text" name="mobile_number" placeholder="mobile number" pattern="\d{10}" required><br>
 		<input class="field" type="file" name="profile_picture" /><br>
 		<div class="g-recaptcha" data-sitekey="6LcqniMTAAAAADMqUjXqC9XdpTjiiTnJfZVq1jxj"></div><br>
-		<input class="button" type="submit" name="submit" value="Register"placeholder="register" />
+		<input class="button" type="submit" name="submit" value="Register "placeholder="register" />
 		<span class="new_user">Have an account? <a href="index.php">Login Now!</a></span>
 	</form>
 	<script type="text/javascript">

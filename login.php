@@ -57,13 +57,18 @@
 			$mobile_number=$row["mobile_number"];
 			$image_path=$row["image_path"];
 			echo "<img src=http://localhost" . $image_path . ">";
-			echo "<br>$email";
+			echo "<br><br>$email";
 			echo "<br>$mobile_number<br>";
 		} else {
-			echo "Invalid Credentials";
+			echo "<h2>Invalid Credentials</h2>";
+			echo "<a href='index.php'>Go Back</a>";
+			die();
 		}
 	?>
+	<br>
 	<form action="edit_details.php" method="POST">
+		<input type="hidden" name="username" value="<?php echo $username;?>">
+		<input type="submit" name="submit" class="button" value="Edit Details">
 	</form>
 	<br>
 	<h2> Search for Other DeltaBookers!</h2>

@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>Registration Complete!</title>
-	<?php session_start(); ?>
 	<link rel="stylesheet" type="text/css" href="styles/profile_styles.css">
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
@@ -11,16 +10,22 @@
 	<div class="center_obj">
 	<?php
 		require("config.php"); //MySQL Config File
-		
 		//Handle Credentials and Hash PW
 		$username = $_POST["username"];
 		$email = $_POST["email"];
 		$mobile_number = $_POST["mobile_number"];
 		$password = $_POST["password"];
 		$hash = password_hash($password, PASSWORD_DEFAULT);
+		$captcha = $_POST["g-recaptcha-response"];
 
     	//VALIDATION
-    	//Verify if Username Exists
+    	//Verify Captcha (ONLY WORKS ON LOCALHOST FOR NOW)
+		if (empty($captcha)) {
+			echo "<h2>Please tick the Captcha!</h2><br>";
+			echo "<a href='register.php'>Go back</a>";
+			die();
+		}
+		//Verify if Username Exists
 		$username_query = "SELECT id FROM users WHERE username = '$username';";
 		$username_result = mysqli_query($db,$username_query);
 		$username_count = mysqli_num_rows($username_result);
@@ -28,6 +33,7 @@
 			echo "Username already taken! <br>";
 			die();
 		}
+
 		//Verify if Email Exists and validate
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   			echo "Email is invalid"; 
