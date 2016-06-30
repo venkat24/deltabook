@@ -21,9 +21,9 @@
     	//VALIDATION
     	//Verify Captcha (ONLY WORKS ON LOCALHOST FOR NOW)
 		if (empty($captcha)) {
-			echo "<h2>Please tick the Captcha!</h2><br>";
-			echo "<a href='register.php'>Go back</a>";
-			die();
+			//echo "<h2>Please tick the Captcha!</h2><br>";
+			//echo "<a href='register.php'>Go back</a>";
+			//die();
 		}
 		//Verify if Username Exists
 		$username_query = "SELECT id FROM users WHERE username = '$username';";
