@@ -28,7 +28,6 @@
 			echo "Username already taken! <br>";
 			die();
 		}
-		
 		//Verify if Email Exists and validate
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   			echo "Email is invalid"; 

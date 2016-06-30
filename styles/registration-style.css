@@ -10,8 +10,12 @@ header {
 	text-align: center;
 	color: #321600;
 }
+input[name="username"] {
+  width:81%;
+  align:left;
+} 
 .login {
-  width: 360px;
+  width: 390px;
   padding: 8% 0 0;
   margin: auto;
 }
@@ -20,12 +24,23 @@ header {
   background: #FFAD6C;
   max-width: 360px;
   margin: 0 auto 100px;
-  padding: 45px;
   text-align: center;
+  padding: 45px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .g-recaptcha {
   max-width: 100%;
+}
+span img {
+  position: relative;
+  size: 100%;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 0;
+  top:12px;
+}
+.tick_image {
+  margin: 0 0 10px;
 }
 .field {
   font-family: "Raleway", sans-serif;

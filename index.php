@@ -5,9 +5,7 @@
 </head>
 <body>
 <br>
-<header>
-	DeltaBook
-</header>
+<header>DeltaBook</header>
 <div class="login">
 	<div class="form">
 	<form id='login' action="login.php" method='post' accept-charset='UTF-8' autocomplete="on">

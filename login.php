@@ -5,25 +5,33 @@
 </head>
 <body>
 <header>
-	DeltaBook
+	DeltaBook <br><br>
 </header>
 	<div class="window">
-	<form>
-		<input type="text" onkeyup="search(this.value);">
-		<div id="livesearch"></div>
-		<div id="returnString"></div>
-	</form>
 	<div class="center_obj">
 	<script type="application/javascript"> //Ajax script
 		function search(str) {
 			var xmlhttp=new XMLHttpRequest();
 			xmlhttp.onreadystatechange=function() {
-				if (xmlhttp.readyState==4) {
+				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 					document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
 				}
   			}
 			xmlhttp.open("POST","livesearch.php",true);
+			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xmlhttp.send("t=" + str);
+		}
+		function profiler(username) {
+			var form=document.createElement("form");
+			form.setAttribute("method", "POST");
+    		form.setAttribute("action", "profile_view.php");
+    		var hiddenField=document.createElement("input");
+    		hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "username");
+            hiddenField.setAttribute("value", username);
+            form.appendChild(hiddenField);
+            document.body.appendChild(form);
+            form.submit();
 		}
 	</script>
 	<?php		
@@ -44,19 +52,26 @@
 			}
 		}
 		if($successful_login) {
-			echo "Welcome back $username!<br>";
+			echo "<h3>Welcome back $username!</h3><br><br>";
 			$email=$row["email"];
 			$mobile_number=$row["mobile_number"];
 			$image_path=$row["image_path"];
 			echo "<img src=http://localhost" . $image_path . ">";
 			echo "<br>$email";
-			echo "<br>$mobile_number";
+			echo "<br>$mobile_number<br>";
 		} else {
 			echo "Invalid Credentials";
 		}
 	?>
+	<form action="edit_details.php" method="POST">
+	</form>
+	<br>
+	<h2> Search for Other DeltaBookers!</h2>
+	<input class="field" type="text" onkeyup="search(this.value);" placeholder="Enter username">
+		<div id="livesearch">
+		</div>
 	</div>
-	</div>
+</div>
 <footer>
 	<a href="index.php"> 
 	<?php
