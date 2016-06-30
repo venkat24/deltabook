@@ -56,7 +56,7 @@
 			$email=$row["email"];
 			$mobile_number=$row["mobile_number"];
 			$image_path=$row["image_path"];
-			echo "<img src=http://localhost" . $image_path . ">";
+			echo "<img src=" . $image_path . ">";
 			echo "<br><br>$email";
 			echo "<br>$mobile_number<br>";
 		} else {
