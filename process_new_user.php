@@ -19,8 +19,8 @@
 		$captcha = $_POST["g-recaptcha-response"];
 
     	//VALIDATION
-    	//Verify Captcha (ONLY WORKS ON LOCALHOST FOR NOW)
-		if (empty($captcha)) {
+    	//Verify Captcha (ONLY WORKS ON LOCALHOST FOR NOW. NO API KEY)
+		if (empty($captcha)) {	
 			//echo "<h2>Please tick the Captcha!</h2><br>";
 			//echo "<a href='register.php'>Go back</a>";
 			//die();
