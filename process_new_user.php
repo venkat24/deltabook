@@ -24,9 +24,10 @@
 			//echo "<h2>Please tick the Captcha!</h2><br>";
 			//echo "<a href='register.php'>Go back</a>";
 			//die();
+			//Captcha Validation off FOR TESTING
 		}
 		//Verify if Username Exists
-		$username_query = "SELECT id FROM users WHERE username = '$username';";
+		$username_query = "SELECT * FROM users WHERE username = '$username';";
 		$username_result = mysqli_query($db,$username_query);
 		$username_count = mysqli_num_rows($username_result);
 		if($username_count == 1) {
@@ -38,7 +39,7 @@
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   			echo "Email is invalid"; 
 		} else {
-			$email_query = "SELECT id FROM users WHERE email = '$email';";
+			$email_query = "SELECT * FROM users WHERE email = '$email';";
 			$email_result = mysqli_query($db,$email_query);
 			$email_count = mysqli_num_rows($email_result);
 			if($email_count == 1) {
@@ -48,7 +49,7 @@
 		}
 
 		//Verify if Mobile number exists
-		$mobile_number_query = "SELECT id FROM users WHERE mobile_number = '$mobile_number';";
+		$mobile_number_query = "SELECT * FROM users WHERE mobile_number = '$mobile_number';";
 		$mobile_number_result = mysqli_query($db,$mobile_number_query);
 		$mobile_number_count = mysqli_num_rows($mobile_number_result);
 		if($mobile_number_count == 1) {
@@ -57,7 +58,7 @@
 		}
 
 		//Handle Profile Picture Upload
-		$image_dir = "/var/www/html/images/";
+		$image_dir = "/srv/http/images/";
 		$image_name = rand_string_gen(8);
 		$good_image = true;
 		$image_type = pathinfo($_FILES["profile_picture"]["name"], PATHINFO_EXTENSION);

@@ -11,7 +11,7 @@
 	<div class="center_obj">
 	<?php
 		require("config.php");
-		$username = $_POST["username"];
+		$username = $_REQUEST["username"];
 		$query = "SELECT username,email,mobile_number,image_path FROM users WHERE username='$username';";
 		$result = mysqli_query($db,$query);
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);

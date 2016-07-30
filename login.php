@@ -47,6 +47,7 @@
 			$successful_login=false;
 		} else {
 			$real_password = $row["password"];
+
 			if (!password_verify($password,$real_password)) {
 				$successful_login=false;
 			}
